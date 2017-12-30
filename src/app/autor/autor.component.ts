@@ -1,4 +1,6 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { AutorService } from './autor.service';
 
 @Component({
   selector: 'app-autor',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AutorComponent implements OnInit {
 
-  constructor() { }
+
+  obsTextMsg: Observable<string>
+
+
+  constructor(private autorService: AutorService) { }
 
   ngOnInit() {
+  this.getTextMsg();
+
   }
+
+  getTextMsg(): any {
+
+    this.obsTextMsg = this.autorService.getTextoMensagem();
+  }
+
+
+
+
+
 
 }

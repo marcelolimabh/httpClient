@@ -7,6 +7,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
 import { TestData } from './shared/test-data';
 import { AutorComponent } from './autor/autor.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { AutorComponent } from './autor/autor.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     InMemoryWebApiModule.forRoot(TestData)
 
   ],
