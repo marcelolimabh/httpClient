@@ -20,3 +20,43 @@
   </li>
 </ul>
 
+<br>
+<br>
+
+<h3>
+  <p>
+    <strong>
+      Filtrar Livros
+    </strong>
+  </p>
+</h3>
+
+<form [formGroup]="livroForm" (ngSubmit)="onFormSubmit()">
+
+   Selecione Categoria:
+  <select formControlName="categoria">
+    <option *ngFor="let cat of categorias" [ngValue]="cat.categoria">
+      {{ cat.categoria }}
+    </option>
+  </select>
+  Select Ano:
+  <select formControlName="ano">
+    <option *ngFor="let ano of anos" [ngValue]="ano.ano">
+      {{ ano.ano }}
+    </option>
+  </select>
+  <button>Pesquisar</button>
+
+</form>
+
+<br>
+<br>
+<br>
+
+Resultado:
+<ul>
+  <li *ngFor="let livro of livros">
+    Id: {{livro.id}}, Nome: {{livro.nome}}, Categoria: {{livro.categoria}}, Ano: {{livro.ano}}
+  </li>
+</ul>
+
