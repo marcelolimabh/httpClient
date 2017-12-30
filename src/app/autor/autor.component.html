@@ -3,4 +3,20 @@
   {{ mensagem}}
 </p>
 </h3>
+<br>
+<br>
+<h3>
+  <p>
+    <strong>
+      Livros
+    </strong>
+  </p>
+</h3>
+
+
+<ul>
+  <li *ngFor="let livro of obsLivros | async">
+    Id: {{ livro.id}}, Nome: {{livro.nome}}, Categoria: {{ livro.categoria }}, Ano: {{ livro.ano }}
+  </li>
+</ul>
 
