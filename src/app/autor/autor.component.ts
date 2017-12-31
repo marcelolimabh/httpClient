@@ -40,7 +40,7 @@ export class AutorComponent implements OnInit {
   ngOnInit() {
     this.getTextMsg();
     this.getLivros();
-
+    this.getAutorComLivrosFaoritos();
   }
 
   getTextMsg(): any {
@@ -68,6 +68,16 @@ export class AutorComponent implements OnInit {
   filtraLivros(categoria: string, ano: string): void {
     this.autorService.filtrarLivros(categoria, ano).
       subscribe(data => this.livros = data);
+  }
+
+  getAutorComLivrosFaoritos() {
+    this.autorService.getAutorFavorito().subscribe(
+      data => {
+        console.log(data[0]);
+        let dados = data[0];
+        this.livrosFavoritos = dados['livros'];
+      }
+    );
   }
 
 
