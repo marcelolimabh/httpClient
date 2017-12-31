@@ -73,12 +73,13 @@ export class AutorComponent implements OnInit {
   getAutorComLivrosFaoritos() {
     this.autorService.getAutorFavorito().subscribe(
       data => {
-        console.log(data[0]);
         let dados = data[0];
         this.livrosFavoritos = dados['livros'];
       }
     );
   }
+
+
 
 
 
